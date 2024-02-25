@@ -78,7 +78,7 @@ function Navbar() {
                 })}
             </div>
 
-            <div className='   gap-8 h-[100%] flex md:hidden relative'>
+            <div className=' z-10   gap-8 h-[100%] flex md:hidden relative'>
                 {menu.map((el, index)=>  {
                     return index < 3 && <HeaderLink name ="" icon= {el.icon} key={el.name} to={el.name}/>
                 })}
