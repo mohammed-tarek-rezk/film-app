@@ -55,7 +55,10 @@ function Navbar() {
     document.addEventListener("submit", (e)=>{
         if(e.target === searchForm.current){
             e.preventDefault()
-            window.location.href = "/search/"+inputSearch.current.value;
+            let el = document.createElement("a")
+            el.href = "/search/"+inputSearch.current.value
+            searchForm.current.append(el)
+            el.click()
         }
     })
   return (
@@ -87,12 +90,12 @@ function Navbar() {
             </div>
                 
         </div>
-        <form className='hidden transition-all duration-150 text-center py-2' ref={searchForm}>
-            <div className=' w-[90%] md:w-[60%] m-auto relative'>
-                <input type='text' className=' border-2 border-gray-300 rounded-md focus:outline-none  w-full  ' style={{padding: "4px 4px 4px 35px"}} ref={inputSearch}/>
-                <span className=' absolute left-0 h-[100%] text-xl top-0 flex items-center justify-center content-center w-[30px]  border-r-2 border-blue-600 text-blue-600 '>
-                    <IoSearch />
-                </span>
+        <form method='get' className='hidden transition-all duration-150 text-center py-2' ref={searchForm}>
+            <div  className=' w-[90%] md:w-[60%] m-auto relative'>
+                <input  type='text' className=' border-2 border-gray-300 rounded-md focus:outline-none  w-full  ' style={{padding: "4px 4px 4px 35px"}} ref={inputSearch}/>
+                    <span className=' absolute left-0 h-[100%] text-xl top-0 flex items-center justify-center content-center w-[30px]  border-r-2 border-blue-600 text-blue-600 '>
+                        <IoSearch />
+                    </span>
             </div>
         </form>
     </header>

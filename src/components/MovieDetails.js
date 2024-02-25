@@ -11,7 +11,7 @@ function MovieDetails() {
   let [movie, setMovie]= useState([])
   useEffect(()=>{
     getMovieById(param.id).then((res)=> { setMovie(res.data);console.log(res.data);})
-  },[])
+  },[param])
   return (
     <>
     <div className=" mt-5  relative" style={{background: `url(${img})`, backgroundRepeat: "no-repeat" , backgroundSize:"cover"}}>
