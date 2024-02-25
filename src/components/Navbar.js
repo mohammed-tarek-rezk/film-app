@@ -12,6 +12,8 @@ import HeaderLink from './HeaderLink';
 import { IoSearch } from "react-icons/io5";
 function Navbar() {
     let [toggle , setToggle] = useState(false)
+    let [word , setWord] = useState("")
+    let linkref = useRef("")
     let searchForm = useRef()
     let inputSearch = useRef()
     const menu=[
@@ -55,10 +57,8 @@ function Navbar() {
     document.addEventListener("submit", (e)=>{
         if(e.target === searchForm.current){
             e.preventDefault()
-            let el = document.createElement("a")
-            el.href = "/search/"+inputSearch.current.value
-            searchForm.current.append(el)
-            el.click()
+            setWord(inputSearch.current.value)
+            linkref.current.click()
         }
     })
   return (
@@ -98,6 +98,7 @@ function Navbar() {
                     </span>
             </div>
         </form>
+                    <Link to={"/search/"+{word}} ref={linkref}></Link>
     </header>
   )
 }
