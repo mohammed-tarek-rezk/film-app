@@ -23,7 +23,7 @@ function Navbar() {
         {
             name:'SEARCH',
             icon:HiMagnifyingGlass,
-            to: "/search"
+            to: "SEARCH"
         },
         {
             name:'WATCHLIST',
@@ -74,7 +74,7 @@ function Navbar() {
 
             <div className='   gap-8 h-[100%] flex md:hidden relative'>
                 {menu.map((el, index)=>  {
-                    return index < 3 && <HeaderLink name ="" icon= {el.icon} key={el.name} to={el.to}/>
+                    return index < 3 && <HeaderLink name ="" icon= {el.icon} key={el.name} to={el.name}/>
                 })}
                 <span onClick={()=>setToggle(!toggle)}>
                 <HeaderLink name=""  icon= {CgMoreVerticalAlt} />
