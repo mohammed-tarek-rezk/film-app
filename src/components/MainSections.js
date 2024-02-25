@@ -12,7 +12,7 @@ function MainSections() {
 
   return (
 
-    <div>
+    <div className=' px-3'>
         {categories.map((el)=>{
             return (
                 <section key={el.id} className=' container m-auto xl:max-w-screen-xl  py-5 relative'>
